@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import { connectDB } from './db/db.js';
 import dataRoutes from './routes/dataRoutes.js';
 import metricsRoutes from './routes/metricsRoutes.js';
+import predictRoutes from './routes/predictRoutes.js';
 
 dotenv.config();
 
@@ -15,7 +16,7 @@ app.use(json());
 
 app.use('/', dataRoutes)
 app.use('/', metricsRoutes)
-
+app.use('/', predictRoutes)
 
 app.listen(process.env.PORT || 3000, () => {
   connectDB();
